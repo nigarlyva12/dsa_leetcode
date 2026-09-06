@@ -5,8 +5,8 @@ import java.util.List;
 
 public class MergeTwoArrays {
 	public static void main(String[] args) {
-		int[] arr1 = {1,3};
-		int[] arr2 = {2};
+		int[] arr1 = {3,1};
+		int[] arr2 = {2,6,3};
 		
 		Integer res[] = mergeArrays(arr1, arr2);
 		
@@ -26,6 +26,18 @@ public class MergeTwoArrays {
 			merged.add(arr2[i]);
 		}
 		res = merged.toArray(new Integer[0]);
+		for(int i=0; i<res.length; i++) {
+			boolean swapped=false;
+			for(int j=0; j<res.length-1; j++) {
+				if(res[j]>res[j+1]) {
+					int temp = res[j];
+					res[j]= res[j+1];
+					res[j+1]=temp;
+					swapped=true;
+				}
+			}
+			if(!swapped) break;
+		}
 		return res;
 	}
 }
