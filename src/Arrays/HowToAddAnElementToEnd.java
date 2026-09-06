@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Array-in sonuna element elave etmek ucun 2 usuldan istifade eleye bilerik
- * 1. ölçüsü evvelki arraydan +1 qeder cox olan yeni array yaratmaqla - option 1
- * 2. ArrayList istifade etmekle
+ * two ways to add an element to the end of an array
+ * 1. By creating a new array whose size is one greater than the original array - option 1
+ * 2. By applying ArrayList
  * **/
 public class HowToAddAnElementToEnd {
 	public static void main(String[] args) {
