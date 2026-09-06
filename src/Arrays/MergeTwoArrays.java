@@ -1,6 +1,7 @@
 package Arrays;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MergeTwoArrays {
@@ -26,18 +27,14 @@ public class MergeTwoArrays {
 			merged.add(arr2[i]);
 		}
 		res = merged.toArray(new Integer[0]);
-		for(int i=0; i<res.length; i++) {
-			boolean swapped=false;
-			for(int j=0; j<res.length-1; j++) {
-				if(res[j]>res[j+1]) {
-					int temp = res[j];
-					res[j]= res[j+1];
-					res[j+1]=temp;
-					swapped=true;
-				}
-			}
-			if(!swapped) break;
-		}
+		Arrays.sort(res);
 		return res;
+	}
+	public static double findMedian(Integer arr[]) {
+		int n = arr.length;
+		
+		if(n%2!=0) 
+			return arr[n/2];
+		return (arr[(n - 1) / 2] + arr[n / 2]) / 2.0;
 	}
 }
